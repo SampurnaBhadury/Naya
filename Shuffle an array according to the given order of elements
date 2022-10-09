@@ -1,0 +1,31 @@
+#include <stdio.h>
+void shuffle(int nums[], int pos[], int n)
+{
+    int aux[n];
+    for (int i = 0; i < n; i++)
+    {
+        aux[pos[i]] = nums[i];
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        nums[i] = aux[i];
+    }
+}
+ 
+int main(void)
+{
+    int nums[] = { 1, 2, 3, 4, 5 };
+    int pos[] = { 3, 2, 4, 1, 0 };
+ 
+    int n = sizeof(nums) / sizeof(nums[0]);
+ 
+    shuffle(nums, pos, n);
+ 
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%d ", nums[i]);
+    }
+ 
+    return 0;
+}
+    
